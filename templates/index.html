@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Size Calculator</title>
+    <style>
+      body {
+        background: linear-gradient(135deg, #fceabb, #f8b500);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+      }
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+      .card {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+        width: 350px;
+        text-align: center;
+      }
+      .card input,
+      .card button {
+        padding: 10px;
+        margin-top: 10px;
+        width: 75%;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      .card button {
+        background-color: #f8b500;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      .card button:hover {
+        background-color: #e79f00;
+      }
+
+      h3 {
+        color: #333;
+        margin-top: 20px;
+        font-size: 18px;
+      }
+      a {
+        display: inline-block;
+        margin-top: 15px;
+        text-decoration: none;
+        color: #2196f3;
+        font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="card">
+        <form method="POST">
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+          /><br /><br />
+
+          <label for="microscope_size">Microscope Size (mm):</label>
+          <input
+            type="number"
+            id="microscope_size"
+            name="microscope_size"
+            step="any"
+            required
+          /><br /><br />
+
+          <label for="magnification">Magnification:</label>
+          <input
+            type="number"
+            id="magnification"
+            name="magnification"
+            step="any"
+            required
+          /><br /><br />
+
+          <button type="submit">Calculate!</button>
+        </form>
+
+        {% if result %}
+        <h3>{{ result }}</h3>
+        {% endif %}
+
+        <a href="{{ url_for('view_data') }}">Result</a>
+      </div>
+    </div>
+  </body>
+</html>

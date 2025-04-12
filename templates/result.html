@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Result</title>
+    <style>
+      body {
+        background: linear-gradient(135deg, #fceabb, #f8b500);
+        height: 100vh;
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Result</h2>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Microscope Size (mm)</th>
+        <th>Mag</th>
+        <th>Real Size (mm)</th>
+      </tr>
+      {% for row in data %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br />
+    <a href="/">← Back</a>
+  </body>
+</html>
